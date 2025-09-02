@@ -10,8 +10,8 @@
 <br>
 # Isolar os elementos da diagonal principal <br>
 { 10x <br>
-{     5y <br>
-{         10z <br>
+{     5y <br>
+{        10z <br>
 <br>
 # Isolados <br>
 x = 1/10 * (7 - 2y - z) <br>
