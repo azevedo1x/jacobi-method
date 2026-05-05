@@ -1,40 +1,53 @@
-System <br>
+## Linear System Analysis
 
-{ 10x + 2y + z = 7 <br>
-{ x + 5y + z = -8 <br>
-{ 2x + 3y + 10z = 6 <br>
+### Original System
+$$
+\begin{cases} 
+10x + 2y + z = 7 \\ 
+x + 5y + z = -8 \\ 
+2x + 3y + 10z = 6 
+\end{cases}
+$$
 
-Initial Estimates <br>
+### Initial Estimates
+*   $x_0 = 0.5$
+*   $y_0 = -1$
+*   $z_0 = 0.5$
 
-{ X₀ = 0.5 <br>
-{ Y₀ = -1 <br>
-{ Z₀ = 0.5 <br>
+---
 
-Isolate the main diagonal elements <br>
+## Isolation of Variables
+To solve using an iterative method (like Jacobi), we isolate the elements of the **main diagonal**:
 
-{ 10x <br>
-{     5y <br>
-{        10z <br>
+$$
+\begin{aligned}
+x &= \frac{1}{10}(7 - 2y - z) \\
+y &= \frac{1}{5}(-8 - x - z) \\
+z &= \frac{1}{10}(6 - 3y - 2x)
+\end{aligned}
+$$
 
-Isolated <br>
+---
 
-x = 1/10 * (7 - 2y - z) <br>
-y = 1/5 * (-8 - x - z) <br>
-z = 1/10 * (6 - 3y - 2x) <br>
+## Iteration 1 Calculations
+Substituting the initial estimates $(x_0, y_0, z_0)$ into the isolated equations:
 
-Substituting the unknowns with the estimates <br>
+### Calculating $x_1$
+$$x_1 = \frac{1}{10}(7 - 2(-1) - 0.5)$$
+$$x_1 = \frac{8.5}{10} = \mathbf{0.85}$$
 
-x₁ = 1/10 * (7 - 2Y₀ - Z₀) <br>
-y₁ = 1/5 * (-8 - X₀ - Z₀) <br>
-z₁ = 1/10 * (6 - 3Y₀ - 2X₀) <br>
+### Calculating $y_1$
+$$y_1 = \frac{1}{5}(-8 - 0.5 - 0.5)$$
+$$y_1 = \frac{-9}{5} = \mathbf{-1.8}$$
 
-Calculating <br>
+### Calculating $z_1$
+$$z_1 = \frac{1}{10}(6 - 3(-1) - 2(0.5))$$
+$$z_1 = \frac{8}{10} = \mathbf{0.8}$$
 
-x₁ = 1/10 * (7 - 2 * -1 - 0.5) <br>
-x₁ = 8.5/10 = 0.85 <br>
-<br>
-y₁ = 1/5 * (-8 - 0.5 - 0.5) <br>
-y₁ = -9/5 = -1.8 <br>
-<br>
-z₁ = 1/10 * (6 - 3 * (-1) - 2 * 0.5) <br>
-z₁ = 8/10 = 0.8
+---
+
+### Results Summary (First Iteration)
+> **New Estimates:**  
+> $x_1 = 0.85$  
+> $y_1 = -1.8$  
+> $z_1 = 0.8$
